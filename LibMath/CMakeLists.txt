@@ -42,7 +42,7 @@ add_library(LibMath STATIC)
 target_sources(LibMath PRIVATE ${TARGET_FILES})
 
 target_include_directories(LibMath 
-	PUBLIC ${TARGET_INCLUDE_DIR}/LibMath/Header)
+	PUBLIC ${TARGET_INCLUDE_DIR}/LibMath)
 
 set_target_properties(LibMath PROPERTIES LINKER_LANGUAGE CXX)
 
