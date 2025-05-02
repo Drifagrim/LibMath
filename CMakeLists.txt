@@ -1,7 +1,7 @@
 # ~ LibMath
 cmake_minimum_required(VERSION 3.24 FATAL_ERROR) # PATH_EQUAL
 
-option(LIB_MATH_UNIT_TEST "" ON)
+# option(LIB_MATH_UNIT_TEST "" ON)
 
 get_filename_component(PROJECT_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
@@ -19,7 +19,7 @@ endif()
 
 add_subdirectory(LibMath)
 
-if (${LIB_MATH_UNIT_TEST})
+if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/UnitTest)
 	add_subdirectory(UnitTest)
 
 	if(MSVC)
