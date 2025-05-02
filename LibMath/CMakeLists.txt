@@ -37,11 +37,14 @@ set(TARGET_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Header)
 
 
 # ~ Static library
-add_library(${TARGET_NAME} STATIC)
+add_library(LibMath STATIC)
 
-target_sources(${TARGET_NAME} PRIVATE ${TARGET_FILES})
+target_sources(LibMath PRIVATE ${TARGET_FILES})
 
-target_include_directories(${TARGET_NAME} PRIVATE ${TARGET_INCLUDE_DIR}/LibMath)
+target_include_directories(LibMath 
+	PUBLIC ${TARGET_INCLUDE_DIR}/LibMath/Header)
+
+set_target_properties(LibMath PROPERTIES LINKER_LANGUAGE CXX)
 
 if(MSVC)
 	target_compile_options(${TARGET_NAME} PRIVATE /W4 /WX)
